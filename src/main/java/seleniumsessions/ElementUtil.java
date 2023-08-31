@@ -48,7 +48,7 @@ public class ElementUtil {
 	public void doClear(By locator) {
 		getElement(locator).clear();
 	}
-	System.out.println("Test line for git");
+	//System.out.println("Test line for git");
 	public boolean checkElementIsDisplayed(By locator) {
 		return getElement(locator).isDisplayed();
 	}
