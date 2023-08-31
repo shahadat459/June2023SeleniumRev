@@ -9,15 +9,15 @@ public class BrowserUtil {
 	WebDriver driver;
 
 	public WebDriver initDriver(String browserName) {
-
+		System.out.println("Test line for git");
 		System.out.println("Launching the browser: " + browserName);
-		
-		//browser null check
-				if (browserName == null) {
-					System.out.println("Browser can not be null");
-					throw new MySeleniumException("BROWSERNULLEXCEPTION");
-				}
-				
+
+		// browser null check
+		if (browserName == null) {
+			System.out.println("Browser can not be null");
+			throw new MySeleniumException("BROWSERNULLEXCEPTION");
+		}
+
 		switch (browserName.toLowerCase().trim()) {
 		case "chrome":
 			driver = new ChromeDriver();
@@ -37,28 +37,27 @@ public class BrowserUtil {
 	}
 
 	public void launchUrl(String url) {
-		//URL null check
+		// URL null check
 		if (url == null) {
 			System.out.println("URL can not be null");
 			throw new MySeleniumException("URLBLANKEXCEPTION");
 		}
-		if(url.contains("http")) {
+		if (url.contains("http")) {
 			driver.get(url);
-		}
-		else {
+		} else {
 			System.out.println("http(s) is missing");
-	}
+		}
 
 	}
-	
+
 	public String getPageTitle() {
 		return driver.getTitle();
 	}
-	
+
 	public String getPageURL() {
 		return driver.getCurrentUrl();
 	}
-	
+
 	public void quitBrowser() {
 		driver.quit();
 	}
